@@ -255,3 +255,4 @@ D:\Simona's Folder\School\2023 - 2024\СИ\Задачи\TEAMALPHA\FunnyBunnyGame
 D:\Simona's Folder\School\2023 - 2024\СИ\Задачи\TEAMALPHA\FunnyBunnyGames\Web.FunnyBunnyGames\obj\Debug\net6.0\Web.FunnyBunnyGames.pdb
 D:\Simona's Folder\School\2023 - 2024\СИ\Задачи\TEAMALPHA\FunnyBunnyGames\Web.FunnyBunnyGames\obj\Debug\net6.0\Web.FunnyBunnyGames.genruntimeconfig.cache
 D:\Simona's Folder\School\2023 - 2024\СИ\Задачи\TEAMALPHA\FunnyBunnyGames\Web.FunnyBunnyGames\obj\Debug\net6.0\ref\Web.FunnyBunnyGames.dll
+D:\Simona's Folder\School\2023 - 2024\СИ\Задачи\TEAMALPHA\FunnyBunnyGames\Web.FunnyBunnyGames\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll

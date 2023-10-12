@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.FunnyBunnyGames", "Web.FunnyBunnyGames\Web.FunnyBunnyGames.csproj", "{94BCDC94-6A27-4565-BED9-A8FEBBD69CD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunnyBunnyGames.Data", "FunnyBunnyGames.Data\FunnyBunnyGames.Data.csproj", "{E873786B-8914-49B0-855E-55DFDF429747}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunnyBunnyGames.Services", "FunnyBunnyGames.Services\FunnyBunnyGames.Services.csproj", "{CEEF59C8-998B-4972-A845-10FAEE5ABC6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{94BCDC94-6A27-4565-BED9-A8FEBBD69CD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94BCDC94-6A27-4565-BED9-A8FEBBD69CD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94BCDC94-6A27-4565-BED9-A8FEBBD69CD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E873786B-8914-49B0-855E-55DFDF429747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E873786B-8914-49B0-855E-55DFDF429747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E873786B-8914-49B0-855E-55DFDF429747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E873786B-8914-49B0-855E-55DFDF429747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEEF59C8-998B-4972-A845-10FAEE5ABC6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEF59C8-998B-4972-A845-10FAEE5ABC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEF59C8-998B-4972-A845-10FAEE5ABC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEEF59C8-998B-4972-A845-10FAEE5ABC6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
