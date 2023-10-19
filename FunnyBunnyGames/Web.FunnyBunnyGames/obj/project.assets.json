@@ -11128,24 +11128,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SwiftX\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\35989\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Simona's Folder\\School\\2023 - 2024\\СИ\\Задачи\\TEAMALPHA\\FunnyBunnyGames\\Web.FunnyBunnyGames\\Web.FunnyBunnyGames.csproj",
+      "projectUniqueName": "D:\\School-2023-2024\\СИ\\TEAMALPHA\\FunnyBunnyGames\\Web.FunnyBunnyGames\\Web.FunnyBunnyGames.csproj",
       "projectName": "Web.FunnyBunnyGames",
-      "projectPath": "D:\\Simona's Folder\\School\\2023 - 2024\\СИ\\Задачи\\TEAMALPHA\\FunnyBunnyGames\\Web.FunnyBunnyGames\\Web.FunnyBunnyGames.csproj",
-      "packagesPath": "C:\\Users\\SwiftX\\.nuget\\packages\\",
-      "outputPath": "D:\\Simona's Folder\\School\\2023 - 2024\\СИ\\Задачи\\TEAMALPHA\\FunnyBunnyGames\\Web.FunnyBunnyGames\\obj\\",
+      "projectPath": "D:\\School-2023-2024\\СИ\\TEAMALPHA\\FunnyBunnyGames\\Web.FunnyBunnyGames\\Web.FunnyBunnyGames.csproj",
+      "packagesPath": "C:\\Users\\35989\\.nuget\\packages\\",
+      "outputPath": "D:\\School-2023-2024\\СИ\\TEAMALPHA\\FunnyBunnyGames\\Web.FunnyBunnyGames\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\SwiftX\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\35989\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11217,7 +11212,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
