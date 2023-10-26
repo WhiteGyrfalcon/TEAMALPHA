@@ -12,7 +12,7 @@ using Web.FunnyBunnyGames.Data;
 namespace FunnyBunnyGames.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231026052258_Initial")]
+    [Migration("20231026055439_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
