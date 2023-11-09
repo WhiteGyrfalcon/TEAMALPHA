@@ -15,10 +15,10 @@ namespace FunnyBunnyGames.Data.Models
         public Guid CompanyId { get; set; }
         [Required]
         [StringLength(Constants.MAX_LENGHT_FOR_GAME_NAME)]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
         [Required]
         [StringLength(Constants.MAX_LENGHT_FOR_GAME_DESCRIPTION)]
-        public string Description { get; set; }
+        public string Description { get; set; } = null!;
 
         public DateTime? ReleaseDate { get; set; }
         [Required]
@@ -26,7 +26,7 @@ namespace FunnyBunnyGames.Data.Models
         [Required]
         public int AgeRestriction { get; set; }
         [Required]
-        public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; } = null!;
 
         [ForeignKey(nameof(GenreId))]
         public Genre? Genre { get; set; }

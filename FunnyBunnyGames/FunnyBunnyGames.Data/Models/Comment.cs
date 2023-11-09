@@ -19,7 +19,7 @@ namespace FunnyBunnyGames.Data.Models
         public Guid GameId { get; set; }
         [Required]
         [StringLength(Constants.MAX_LENGHT_FOR_COMMENT_VALUE)]
-        public string Value { get; set; }
+        public string Value { get; set; } = null!;
 
         [ForeignKey(nameof(UserId))]
         public User? User { get; set; }
