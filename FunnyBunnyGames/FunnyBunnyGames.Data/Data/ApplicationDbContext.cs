@@ -1,4 +1,5 @@
-﻿using FunnyBunnyGames.Data.Models;
+﻿using FunnyBunnyGames.Data.Data.Configuration;
+using FunnyBunnyGames.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,14 @@ namespace Web.FunnyBunnyGames.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.ApplyConfiguration(new CommentsConfiguration());
+            builder.ApplyConfiguration(new CompanyConfiguration());
+            builder.ApplyConfiguration(new FavouritesConfiguration());
+            builder.ApplyConfiguration(new GamesConfiguration());
+            builder.ApplyConfiguration(new GenresConfiguration());
+            builder.ApplyConfiguration(new RatingsConfiguration());
+            builder.ApplyConfiguration(new UsersConfiguration());
         }
 
         public DbSet<Comment> Comments { get; set; }
@@ -30,6 +39,6 @@ namespace Web.FunnyBunnyGames.Data
 
         public DbSet<Genre> Genres { get; set; }
 
-        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Rating> Ratings { get; set; }        
     }
 }
