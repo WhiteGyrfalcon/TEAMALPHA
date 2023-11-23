@@ -27,6 +27,7 @@ namespace Web.FunnyBunnyGames.Data
             builder.ApplyConfiguration(new GenresConfiguration());
             builder.ApplyConfiguration(new RatingsConfiguration());
             builder.ApplyConfiguration(new UsersConfiguration());
+            builder.ApplyConfiguration(new IdentityRoleConfiguration());
         }
 
         public DbSet<Comment> Comments { get; set; }
@@ -39,6 +40,6 @@ namespace Web.FunnyBunnyGames.Data
 
         public DbSet<Genre> Genres { get; set; }
 
-        public DbSet<Rating> Ratings { get; set; }        
+        public DbSet<Rating> Ratings { get; set; }
     }
 }
