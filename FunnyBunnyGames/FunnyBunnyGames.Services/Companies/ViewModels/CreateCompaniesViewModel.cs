@@ -8,7 +8,7 @@ using FunnyBunnyGames.Data.Models;
 
 namespace FunnyBunnyGames.Services.Companies.ViewModels
 {
-    internal class CreateCompaniesViewModel
+    public class CreateCompaniesViewModel
     {
         public string Name { get; set; }
         public ICollection<Game> Games { get; set; }

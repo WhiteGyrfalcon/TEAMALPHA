@@ -1,0 +1,35 @@
+﻿@using FunnyBunnyGames.Services.Users.ViewModels;
+@model List<AllUsersViewModel>
+@{
+}<h1>User</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>                                    
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>
+                    @user.FirstName
+                </td>
+                <td>
+                    @user.LastName
+                </td>
+                <td>
+                    @user.UserName
+                </td>
+                <td>
+                    <div class="mb-3">
+                        <a type="submit" class="btn btn-danger" asp-route-id="@user.Id" asp-controller="User" asp-action="Delete">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

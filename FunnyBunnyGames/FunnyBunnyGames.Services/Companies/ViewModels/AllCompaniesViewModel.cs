@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace FunnyBunnyGames.Services.Companies.ViewModels
 {
-    internal class AllCompaniesViewModel
+    public class AllCompaniesViewModel
     {
+        public Guid Id { set; get; }
         public string Name { get; set; }
     }
 }

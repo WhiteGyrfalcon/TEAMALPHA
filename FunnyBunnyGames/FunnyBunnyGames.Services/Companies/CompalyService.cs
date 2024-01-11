@@ -11,13 +11,13 @@ using Web.FunnyBunnyGames.Data;
 
 namespace FunnyBunnyGames.Services.Companies
 {
-    internal class CompalyService : ICompanyService
+    public class CompalyService : ICompanyService
     {
-        private readonly ApplicationDbContext context;
+        private readonly ApplicationDbContext _context;
 
         public CompalyService(ApplicationDbContext context)
         {
-            this.context = context;
+            this._context = context;
         }
 
         public async Task CreateCompanyAsync(CreateCompaniesViewModel request)
@@ -28,68 +28,73 @@ namespace FunnyBunnyGames.Services.Companies
                 Games = request.Games
             };
 
-            await this.context.Companies.AddAsync(company);
-            await this.context.SaveChangesAsync();
+            await this._context.Companies.AddAsync(company);
+            await this._context.SaveChangesAsync();
         }
 
         public async Task DeleteCompanyAsync(Guid id)
         {
-            var model = await this.context.Companies
+            var model = await this._context.Companies
                 .FirstOrDefaultAsync(x => x.Id == id);
+
             if (model != null)
             {
-                context.Companies.Remove(model);
-                await context.SaveChangesAsync();
+                _context.Companies.Remove(model);
+                await _context.SaveChangesAsync();
             }
             else
             {
                 throw new ArgumentNullException();
             }
-        
         }
 
         public async Task<DetailsCompaniesViewModel> GetCompanyAsync(Guid id)
         {
-            var model = await this.context.Companies
+            var model = await this._context.Companies
                .FirstOrDefaultAsync(x => x.Id == id);
+
             if (model != null)
             {
                 var company = new DetailsCompaniesViewModel()
                 {
+                    Id = model.Id,
                     Name = model.Name,
                     Games = model.Games
                 };
+
                 return company;
             }
             else
             {
                 throw new ArgumentNullException();
             }
-
         }
 
         public async Task<List<AllCompaniesViewModel>> ListCompaniyAsync()
         {
-            var model = await this.context.Companies
+            var model = await this._context.Companies
                 .Select(a => new AllCompaniesViewModel()
                 {
-                    Name=a.Name
+                    Id=a.Id,
+                    Name = a.Name
                 })
-                .ToListAsync(); 
+                .ToListAsync();
+
             return model;
         }
 
         public async Task UpdateCompanyAsync(Guid id, UpdateCompaniesViewModel request)
         {
-            var model = await this.context.Companies
-                .FindAsync();
+            var model = await this._context.Companies
+                .FindAsync(id);
 
             if (model != null)
             {
-                model.Name = model.Name;
-                model.Games = model.Games;
+                model.Id = request.Id;
+                model.Name = request.Name;
+                model.Games = request.Games;
 
-                await this.context.SaveChangesAsync();
+                await this._context.SaveChangesAsync();
             }
             else
             {
