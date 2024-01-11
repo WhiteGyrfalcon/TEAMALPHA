@@ -9,10 +9,13 @@ namespace FunnyBunnyGames.Data.Models
         [Key]
         [Required]
         public Guid Id { get; set; }
+
         [Required]
         public Guid GenreId { get; set; }
+
         [Required]
         public Guid CompanyId { get; set; }
+
         [Required]
         [StringLength(Constants.MAX_LENGHT_FOR_GAME_NAME)]
         public string Name { get; set; } = null!;
@@ -21,10 +24,13 @@ namespace FunnyBunnyGames.Data.Models
         public string Description { get; set; } = null!;
 
         public DateTime? ReleaseDate { get; set; }
+
         [Required]
         public double Price { get; set; }
+
         [Required]
         public int AgeRestriction { get; set; }
+
         [Required]
         public string ImageUrl { get; set; } = null!;
 

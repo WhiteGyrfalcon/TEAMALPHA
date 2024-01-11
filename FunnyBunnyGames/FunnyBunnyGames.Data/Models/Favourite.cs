@@ -8,8 +8,10 @@ namespace FunnyBunnyGames.Data.Models
         [Key]
         [Required]
         public Guid Id { get; set; }
+
         [Required]
         public Guid GameId { get; set; }
+
         [Required]
         public Guid UserId { get; set; }
 
