@@ -1,4 +1,5 @@
 using FunnyBunnyGames.Data.Models;
+using FunnyBunnyGames.Services.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Web.FunnyBunnyGames.Data;
@@ -23,6 +24,8 @@ builder.Services.AddDefaultIdentity<User>(options =>
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IUsersService, UsersService>();
 
 var app = builder.Build();
 
