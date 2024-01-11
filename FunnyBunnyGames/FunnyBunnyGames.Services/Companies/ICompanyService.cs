@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FunnyBunnyGames.Services.Companies
 {
-    internal interface ICompanyService
+    public interface ICompanyService
     {
         Task<List<AllCompaniesViewModel>> ListCompaniyAsync();
 

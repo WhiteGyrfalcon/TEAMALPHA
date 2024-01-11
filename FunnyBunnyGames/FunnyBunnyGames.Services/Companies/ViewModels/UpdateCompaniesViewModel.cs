@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace FunnyBunnyGames.Services.Companies.ViewModels
 {
-    internal class UpdateCompaniesViewModel
+    public class UpdateCompaniesViewModel
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public ICollection<Game> Games { get; set; }
     }

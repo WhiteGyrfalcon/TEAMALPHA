@@ -1,0 +1,28 @@
+﻿@model FunnyBunnyGames.Services.Companies.ViewModels.DetailsCompaniesViewModel
+@{
+}
+
+<h1 style="color:#fc6c85">Details:</h1>
+
+<form method="post" action="Get" class="mt-5">
+
+
+    <div class="mb-3" style="color:#fc6c85">
+        <label for="" class="form-label">Name:</label>
+        <br />
+        <input type="text" class="form-control" asp-for="Name" readonly />
+        <br />
+    </div>
+
+    <div class="mb-3" style="color:#fc6c85">
+        <label for="" class="form-label">Games:</label>
+        <br />
+        <input type="number" class="form-control" asp-for="Games" readonly />
+        <br />
+    </div>
+
+
+    <div class="btn-group-sm">
+        <a style="background-color:#fc6c85" asp-controller="Company" asp-action="All" asp-route-id="@Model.Id" class="btn btn-success">Back</a>
+    </div>
+</form>
