@@ -40,7 +40,8 @@ namespace FunnyBunnyGames.Services.Users
                 Id = a.Id,
                 FirstName = a.FirstName,
                 LastName = a.LastName,
-                UserName = a.UserName
+                UserName = a.UserName,
+                Age = a.Age,
             }).ToListAsync();
 
             return model;
@@ -59,6 +60,7 @@ namespace FunnyBunnyGames.Services.Users
                 user.FirstName = viewModel.FirstName;
                 user.LastName = viewModel.LastName;
                 user.UserName = viewModel.UserName;
+                user.Age = viewModel.Age;
                 await dbContext.SaveChangesAsync();
             }
         }

@@ -36,7 +36,7 @@ namespace Web.FunnyBunnyGames.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(UpdateUserViewModel model)
+        public async Task<IActionResult> Update(UpdateUserViewModel model,[FromRoute]Guid id)
         {
             await _usersService.UpdateUserAsync(model);
             return RedirectToAction("All");

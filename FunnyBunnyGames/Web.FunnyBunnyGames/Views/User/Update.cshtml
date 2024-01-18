@@ -1,27 +1,25 @@
 ﻿@model FunnyBunnyGames.Services.Users.ViewModels.UpdateUserViewModel
 @{
 }
-<h1>Update User</h1>
+<h1 style="color:#fc6c85">Update User:</h1>
 <form method="post" action="Update" class="mt-5">
+
 	<div class="mb-3">
-		<label for="" class="form-label">Id</label>
-		<input type="text" class="form-control" asp-for="Id" readonly />
-	</div>
-	<div class="mb-3">
-		<label for="" class="form-label">First Name</label>
+		<label for="" class="form-label" style="color:#fc6c85">First Name:</label>
 		<input type="text" class="form-control" asp-for="FirstName" />
 	</div>
 	<div class="mb-3">
-		<label for="" class="form-label">Last Name</label>
+		<label for="" class="form-label" style="color:#fc6c85">Last Name:</label>
 		<input type="text" class="form-control" asp-for="LastName" />
 	</div>
 	<div class="mb-3">
-		<label for="" class="form-label">Username</label>
+		<label for="" class="form-label" style="color:#fc6c85">Username:</label>
 		<input type="text" class="form-control" asp-for="UserName" />
 	</div>
 	<div class="mb-3">
-		<label for="" class="form-label">Age</label>
+		<label for="" class="form-label" style="color:#fc6c85">Age:</label>
 		<input type="text" class="form-control" asp-for="Age" />
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+
+	<button style="background-color:#fc6c85; border:none" type="submit" class="btn btn-primary" asp-controller="User" asp-action="Update" asp-route-id="@Model.Id" formmethod="post">Submit</button>
 </form>
