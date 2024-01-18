@@ -1,11 +1,4 @@
-﻿using FunnyBunnyGames.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FunnyBunnyGames.Services.Games
+﻿namespace FunnyBunnyGames.Services.Games
 {
     public interface IGameService
     {

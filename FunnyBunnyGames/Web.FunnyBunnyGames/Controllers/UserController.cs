@@ -2,7 +2,6 @@
 using FunnyBunnyGames.Services.Users;
 using FunnyBunnyGames.Services.Users.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Web;
 
 namespace Web.FunnyBunnyGames.Controllers
 {

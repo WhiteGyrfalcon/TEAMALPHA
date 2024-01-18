@@ -2,8 +2,6 @@
 using FunnyBunnyGames.Services.Companies.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ActionConstraints;
-using Microsoft.CodeAnalysis.CSharp;
 
 namespace Web.FunnyBunnyGames.Controllers
 {
@@ -66,14 +64,8 @@ namespace Web.FunnyBunnyGames.Controllers
         [HttpPost]
         public async Task<IActionResult>Update(UpdateCompaniesViewModel model)
         {
-            var comp = new UpdateCompaniesViewModel()
-            {
-                Id = model.Id,
-                Name = model.Name,
-                Games = model.Games
-            };
+            await _companyService.UpdateCompanyAsync(model.Id, model);
 
-            await _companyService.UpdateCompanyAsync(model.Id, comp);
             return RedirectToAction("All");
         }
         [HttpGet]

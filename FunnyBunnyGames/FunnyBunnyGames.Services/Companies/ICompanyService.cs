@@ -1,10 +1,4 @@
-﻿using FunnyBunnyGames.Data.Models;
-using FunnyBunnyGames.Services.Companies.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FunnyBunnyGames.Services.Companies.ViewModels;
 
 namespace FunnyBunnyGames.Services.Companies
 {
@@ -14,10 +8,10 @@ namespace FunnyBunnyGames.Services.Companies
 
         Task<DetailsCompaniesViewModel> GetCompanyAsync(Guid id);
 
-        Task CreateCompanyAsync(CreateCompaniesViewModel request);//add
+        Task CreateCompanyAsync(CreateCompaniesViewModel request);
 
-        Task UpdateCompanyAsync(Guid id, UpdateCompaniesViewModel request);//update
+        Task UpdateCompanyAsync(Guid id, UpdateCompaniesViewModel request);
 
-        Task DeleteCompanyAsync(Guid id);//delete
+        Task DeleteCompanyAsync(Guid id);
     }
 }
