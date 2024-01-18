@@ -7,6 +7,10 @@ namespace Web.FunnyBunnyGames.Data
 {
     public class ApplicationDbContext : IdentityDbContext<User, Role, Guid>
     {
+        public ApplicationDbContext()
+        {
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

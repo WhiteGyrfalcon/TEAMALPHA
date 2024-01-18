@@ -12,7 +12,7 @@ using Web.FunnyBunnyGames.Data;
 namespace FunnyBunnyGames.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231123064028_CreateAndSeedDatabase")]
+    [Migration("20240118082155_CreateAndSeedDatabase")]
     partial class CreateAndSeedDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,8 @@ namespace FunnyBunnyGames.Data.Migrations
 
                     b.Property<string>("Value")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.HasKey("Id");
 
@@ -80,7 +81,8 @@ namespace FunnyBunnyGames.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -168,7 +170,8 @@ namespace FunnyBunnyGames.Data.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1500)
+                        .HasColumnType("nvarchar(1500)");
 
                     b.Property<Guid>("GenreId")
                         .HasColumnType("uniqueidentifier");
@@ -179,12 +182,13 @@ namespace FunnyBunnyGames.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("ReleaseDate")
+                    b.Property<DateTime?>("ReleaseDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -278,7 +282,8 @@ namespace FunnyBunnyGames.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -426,11 +431,13 @@ namespace FunnyBunnyGames.Data.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -483,7 +490,7 @@ namespace FunnyBunnyGames.Data.Migrations
                             Id = new Guid("361fbf2d-ade9-4858-be97-a1795b723c62"),
                             AccessFailedCount = 0,
                             Age = 20,
-                            ConcurrencyStamp = "fa81684e-f315-4f83-adf1-b2f53a993c72",
+                            ConcurrencyStamp = "efebab6e-87d6-46b8-a63b-cff381439985",
                             Email = "stelafox@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Stela",
@@ -499,7 +506,7 @@ namespace FunnyBunnyGames.Data.Migrations
                             Id = new Guid("1c77b562-e54d-4944-97f7-88717b6ac76a"),
                             AccessFailedCount = 0,
                             Age = 18,
-                            ConcurrencyStamp = "09737cf2-66dc-4731-9258-02c6adca4d4d",
+                            ConcurrencyStamp = "c882699e-ba07-4636-823d-7e644bafc1cb",
                             Email = "johnsmith@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "John",

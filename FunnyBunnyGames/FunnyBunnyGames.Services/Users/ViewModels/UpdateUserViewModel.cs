@@ -10,11 +10,11 @@ namespace FunnyBunnyGames.Services.Users.ViewModels
         public string UserName { get; set; } = null!;
 
         [Required]
-        [StringLength(Constants.MAX_LENGHT_FOR_USER_FIRSTNAME)]
+        [StringLength(Constants.MAX_LENGTH_FOR_USER_FIRST_NAME)]
         public string FirstName { get; set; } = null!;
 
         [Required]
-        [StringLength(Constants.MAX_LENGHT_FOR_USER_LASTNAME)]
+        [StringLength(Constants.MAX_LENGTH_FOR_USER_LAST_NAME)]
         public string LastName { get; set; } = null!;
 
         [Required]

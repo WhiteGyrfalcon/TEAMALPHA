@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/FunnyBunnyGames/Web.FunnyBunnyGames/appsettings.json
+/FunnyBunnyGames/Web.FunnyBunnyGames/appsettings.json

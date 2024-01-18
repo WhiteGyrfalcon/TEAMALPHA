@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -27,8 +28,8 @@ namespace FunnyBunnyGames.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -55,7 +56,7 @@ namespace FunnyBunnyGames.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,7 +68,7 @@ namespace FunnyBunnyGames.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -187,9 +188,9 @@ namespace FunnyBunnyGames.Data.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     GenreId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: false),
+                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false),
                     AgeRestriction = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -218,7 +219,7 @@ namespace FunnyBunnyGames.Data.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     GameId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Value = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -302,8 +303,8 @@ namespace FunnyBunnyGames.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "Age", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { new Guid("1c77b562-e54d-4944-97f7-88717b6ac76a"), 0, 18, "09737cf2-66dc-4731-9258-02c6adca4d4d", "johnsmith@gmail.com", false, "John", "Smith", false, null, null, null, null, "089 222 2222", false, null, false, "JoshnSmith" },
-                    { new Guid("361fbf2d-ade9-4858-be97-a1795b723c62"), 0, 20, "fa81684e-f315-4f83-adf1-b2f53a993c72", "stelafox@gmail.com", false, "Stela", "Fox", false, null, null, null, null, "089 111 1111", false, null, false, "StelaFox" }
+                    { new Guid("1c77b562-e54d-4944-97f7-88717b6ac76a"), 0, 18, "c882699e-ba07-4636-823d-7e644bafc1cb", "johnsmith@gmail.com", false, "John", "Smith", false, null, null, null, null, "089 222 2222", false, null, false, "JoshnSmith" },
+                    { new Guid("361fbf2d-ade9-4858-be97-a1795b723c62"), 0, 20, "efebab6e-87d6-46b8-a63b-cff381439985", "stelafox@gmail.com", false, "Stela", "Fox", false, null, null, null, null, "089 111 1111", false, null, false, "StelaFox" }
                 });
 
             migrationBuilder.InsertData(
