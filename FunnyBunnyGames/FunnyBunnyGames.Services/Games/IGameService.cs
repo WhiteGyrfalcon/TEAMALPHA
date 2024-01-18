@@ -1,4 +1,5 @@
 ﻿using FunnyBunnyGames.Data.Models;
+using FunnyBunnyGames.Services.Games.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,16 @@ namespace FunnyBunnyGames.Services.Games
 {
     public interface IGameService
     {
-        //Task<List<Game>> ListAppointmentsAsync(Guid? serviceId = null, Guid? userId = null);
+        Task<List<AllGamesViewModel>> ListGamesAsync();
 
-        //Task<Game> GetAppointmentAsync(Guid id);
+        Task<Game> GetGameAsync(Guid id);
 
-        //Task CreateAppointmentAsync(CreateAppointmentRequest request);
+        Task CreateGameAsync(CreateGameViewModel request);
 
-        //Task UpdateAppointmentAsync(Guid id, UpdateAppointmentRequest request);
+        Task UpdateGameAsync(Guid id, UpdateGameViewModel request);
 
-        //Task DeleteAppointmentAsync(Guid id);
+        Task DeleteGameAsync(Guid id);
+
+
     }
 }
