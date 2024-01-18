@@ -2,7 +2,6 @@ using FunnyBunnyGames.Data.Models;
 using FunnyBunnyGames.Services.Favourites;
 using FunnyBunnyGames.Services.Users;
 using FunnyBunnyGames.Services.Companies;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Web.FunnyBunnyGames.Data;
 

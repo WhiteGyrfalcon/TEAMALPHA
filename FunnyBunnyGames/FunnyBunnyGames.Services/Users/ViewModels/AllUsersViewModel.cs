@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FunnyBunnyGames.Services.Users.ViewModels
+﻿namespace FunnyBunnyGames.Services.Users.ViewModels
 {
     public class AllUsersViewModel
     {
