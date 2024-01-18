@@ -24,4 +24,8 @@
     <ProjectReference Include="..\FunnyBunnyGames.Services\FunnyBunnyGames.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Game\" />
+  </ItemGroup>
+
 </Project>

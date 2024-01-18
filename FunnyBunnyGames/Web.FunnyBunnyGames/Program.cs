@@ -1,4 +1,7 @@
 using FunnyBunnyGames.Data.Models;
+using FunnyBunnyGames.Services.Games;
+using FunnyBunnyGames.Services.Genres;
+using FunnyBunnyGames.Services.Ratings;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Web.FunnyBunnyGames.Data;
@@ -23,6 +26,10 @@ builder.Services.AddDefaultIdentity<User>(options =>
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IGameService, GameService>();
+builder.Services.AddScoped<IGenreService, GenreService>();
+builder.Services.AddScoped<IRatingService, RatingService>();
 
 var app = builder.Build();
 
