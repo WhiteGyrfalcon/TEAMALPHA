@@ -1,13 +1,20 @@
 ﻿@using FunnyBunnyGames.Services.Users.ViewModels;
 @model List<AllUsersViewModel>
 @{
-}<h1>User</h1>
+}
+<style>
+    table, th, td {
+        border: 1px solid #fc6c85
+    }
+</style>
+<h1 style="color:#fc6c85" >User:</h1>
 <table class="table">
-    <thead>
+    <thead style ="color:#fc6c85">
         <tr>
             <th>First Name</th>                                    
             <th>Last Name</th>
             <th>Username</th>
+            <th>Age</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -15,20 +22,27 @@
         @foreach (var user in Model)
         {
             <tr>
-                <td>
+                <td style="color:white">
                     @user.FirstName
                 </td>
-                <td>
+                <td style="color:white">
                     @user.LastName
                 </td>
-                <td>
+                <td style="color:white">
                     @user.UserName
                 </td>
-                <td>
-                    <div class="mb-3">
-                        <a type="submit" class="btn btn-danger" asp-route-id="@user.Id" asp-controller="User" asp-action="Delete">Delete</a>
-                    </div>
+                <td style="color:white">
+                    @user.Age
                 </td>
+              
+                    <td>
+                        <div class="mb-3">
+                            <a style="background-color:#fc6c85; border:none" asp-controller="User" asp-action="Update" asp-route-id="@user.Id" class="btn btn-success">Update</a>
+                            <a type="submit" class="btn btn-danger" asp-route-id="@user.Id" asp-controller="User" asp-action="Delete">Delete</a>
+                        </div>
+                    </td>
+                
+                
             </tr>
         }
     </tbody>
