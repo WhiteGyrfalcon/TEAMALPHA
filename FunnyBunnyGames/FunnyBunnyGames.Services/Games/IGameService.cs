@@ -1,4 +1,4 @@
-﻿using FunnyBunnyGames.Data.Models;
+using FunnyBunnyGames.Data.Models;
 using FunnyBunnyGames.Services.Games.ViewModel;
 using System;
 using System.Collections.Generic;

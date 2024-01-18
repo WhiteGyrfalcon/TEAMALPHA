@@ -3,6 +3,9 @@ using FunnyBunnyGames.Services.Games;
 using FunnyBunnyGames.Services.Genres;
 using FunnyBunnyGames.Services.Ratings;
 using Microsoft.AspNetCore.Identity;
+using FunnyBunnyGames.Services.Favourites;
+using FunnyBunnyGames.Services.Users;
+using FunnyBunnyGames.Services.Companies;
 using Microsoft.EntityFrameworkCore;
 using Web.FunnyBunnyGames.Data;
 
@@ -30,6 +33,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddScoped<IRatingService, RatingService>();
+builder.Services.AddScoped<IFavouriteService, FavouriteService>();
+builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<ICompanyService, CompalyService>();
 
 var app = builder.Build();
 

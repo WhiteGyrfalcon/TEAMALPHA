@@ -7,8 +7,9 @@ namespace FunnyBunnyGames.Data.Models
         [Key]
         [Required]
         public Guid Id { get; set; }
+
         [Required]
-        [MaxLength(Constants.MAX_LENGHT_FOR_GENRE_NAME)]
+        [MaxLength(Constants.MAX_LENGTH_FOR_GENRE_NAME)]
         public string Name { get; set; } = null!;
 
         public ICollection<Game> Games  { get; set; } = new List<Game>();

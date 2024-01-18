@@ -1,0 +1,47 @@
+﻿@using FunnyBunnyGames.Services.Companies.ViewModels;
+@model List<AllCompaniesViewModel> 
+
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+        border: 1px solid #fc6c85
+}
+</style>
+<body>
+    <h3 style="color:#fc6c85">
+        List of all companies:</h3>
+
+    <table class="table">
+        <thead style="color:#fc6c85">
+            <tr>
+                <th> Name: </th>
+                <center>
+                <th> More:</th>
+                </center>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var company in this.Model)
+            {
+                <tr>
+                    <center>
+                       <td style="color:white">@company.Name</td>
+                    </center>
+                    <td>
+                      <div class="btn-group-sm">
+                          <center>
+                            <a style="background-color:#fc6c85; border:none" asp-controller="Company" asp-action="Get" asp-route-id="@company.Id" class="btn btn-success">Details</a>
+                            <a style="background-color:#fc6c85; border:none" asp-controller="Company" asp-action="Update" asp-route-id="@company.Id" class="btn btn-success">Update</a>
+                            <a asp-controller="Company" asp-action="Delete" asp-route-id="@company.Id" class="btn btn-danger">Delete</a>
+                          </center>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a style="background-color:#fc6c85; border:none;" asp-controller="Company" asp-action="Create" class="btn btn-warning">Add your own company</a>
+</body>
+</html>
