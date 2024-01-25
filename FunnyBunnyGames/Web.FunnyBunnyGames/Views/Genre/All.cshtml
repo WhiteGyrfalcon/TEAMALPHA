@@ -1,0 +1,44 @@
+﻿@using FunnyBunnyGames.Services.Genres.ViewModel;
+@model List<GenresViewModel>
+
+<!DOCTYPE html>
+<html>
+<style>
+    table, th, td {
+        border: 1px solid #fc6c85
+    }
+</style>
+<body>
+    <h3 style="color:#fc6c85">
+        List of all genres:
+    </h3>
+
+    <table class="table">
+        <thead style="color:#fc6c85">
+            <tr>
+                <th> Name: </th>
+                <center>
+                <th> More:</th>
+                </center>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var genre in this.Model)
+            {
+                <tr>
+                    <center>
+                    <td style="color:white">@genre.Name</td>
+                    </center>
+                    <td>
+                        <center>
+                            <a asp-controller="Genre" asp-action="Delete" asp-route-id="@genre.Id" class="btn btn-danger">Delete</a>
+                        </center>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a style="background-color:#fc6c85; border:none;" asp-controller="Genre" asp-action="Create" class="btn btn-warning">Add new genre</a>
+</body>
+</html>
