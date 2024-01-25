@@ -45,6 +45,7 @@ namespace FunnyBunnyGames.Services.Companies
         public async Task<DetailsCompaniesViewModel> GetCompanyAsync(Guid id)
         {
             var model = await this._context.Companies
+                .Include(x=>x.Games)
                .FirstOrDefaultAsync(x => x.Id == id);
 
             if (model != null)
