@@ -1,0 +1,53 @@
+﻿@using FunnyBunnyGames.Services.Games.ViewModel
+@model CreateGameViewModel
+
+@{
+    ViewBag.Title = "Create Game";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form enctype="multipart/form-data" method="post">
+            <div class="mb-3">
+                <label asp-for="@Model.Name" class="form-label">Car service name</label>
+                <input asp-for="@Model.Name" class="form-control" aria-required="true" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Price" class="form-label">Price</label>
+                <input asp-for="@Model.Price" class="form-control" aria-required="true" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Description" class="form-label">Description</label>
+                <input type="text" asp-for="@Model.Description" class="form-control" aria-required="true" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genres">Genres:</label>
+                <br />
+                @foreach (var genre in Model.Genres)
+                {
+                    <label>@genre.Name</label>
+                    <input type="hidden" asp-for="@genre.Id" />
+                    <input type="hidden" asp-for="@genre.Name" />
+
+                    <br />
+                }
+                <span asp-validation-for="Genres" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" asp-controller="Create" asp-action="Add" type="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
