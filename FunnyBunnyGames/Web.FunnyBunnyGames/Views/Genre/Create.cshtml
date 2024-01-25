@@ -1,0 +1,15 @@
+﻿@model FunnyBunnyGames.Services.Genres.ViewModel.GenresViewModel
+@{
+}
+<body>
+    <h1 style="color:#fc6c85">
+        Add company:
+    </h1>
+    <form method="post" action="Create" class="mt-5">
+        <div class="mb-3">
+            <label style="color:#fc6c85" for="" class="form-label">Name:</label>
+            <input type="text" class="form-control" asp-for="Name">
+        </div>
+        <button style="background-color:#fc6c85; border:none" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
