@@ -12,7 +12,7 @@ namespace FunnyBunnyGames.Services.Comments.ViewModels
         public Guid GameId { get; set; }
 
         [Required]
-        [StringLength(Constants.MAX_LENGHT_FOR_COMMENT_VALUE)]
+        [StringLength(Constants.MAX_LENGTH_FOR_COMMENT_VALUE)]
         public string Value { get; set; } = null!;
     }
 }
