@@ -1,4 +1,5 @@
 ﻿using FunnyBunnyGames.Data.Models;
+using FunnyBunnyGames.Services.Companies.ViewModels;
 using FunnyBunnyGames.Services.Genres.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -34,14 +35,11 @@ namespace FunnyBunnyGames.Services.Games.ViewModel
         [Required]
         public int AgeRestriction { get; set; }
 
-        [Required]
-        public string ImageUrl { get; set; } = null!;
+        public string? ImageUrl { get; set; }
 
         public ICollection<GenresViewModel> Genres { get; set; } = new List<GenresViewModel>();
 
-        //TODO:
-        //public ICollection<CompanyViewModel> MyProperty { get; set; } = new List<CompanyViewModel>();
-
-        public string CompantyName { get; set; }
+        public ICollection<AllCompaniesViewModel> Companies { get; set; } 
+            = new List<AllCompaniesViewModel>();
     }
 }

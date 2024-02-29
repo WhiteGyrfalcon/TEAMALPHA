@@ -1,9 +1,11 @@
 ﻿using FunnyBunnyGames.Services.Favourites;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.FunnyBunnyGames.Infrastructure;
 
 namespace Web.FunnyBunnyGames.Controllers
 {
+    [Authorize]
     public class FavouriteController : Controller
     {
         private readonly IFavouriteService _favouriteService;

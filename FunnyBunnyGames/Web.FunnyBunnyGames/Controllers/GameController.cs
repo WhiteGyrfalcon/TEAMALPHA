@@ -1,21 +1,26 @@
 ﻿using FunnyBunnyGames.Data.Models;
+using FunnyBunnyGames.Services.Companies;
 using FunnyBunnyGames.Services.Games;
 using FunnyBunnyGames.Services.Games.ViewModel;
 using FunnyBunnyGames.Services.Genres;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace Web.FunnyBunnyGames.Controllers
 {
+    [Authorize]
     public class GameController : Controller
     {
         private readonly IGameService _gameService;
         private readonly IGenreService _genreService;
+        private readonly ICompanyService _companyService;
 
-        public GameController(IGameService gameService, IGenreService genreService)
+        public GameController(IGameService gameService, IGenreService genreService, ICompanyService companyService)
         {
             this._gameService = gameService;
             this._genreService = genreService;
+            this._companyService = companyService;
         }
 
         public IActionResult Index()
@@ -32,11 +37,13 @@ namespace Web.FunnyBunnyGames.Controllers
             return View(model);
         }
        
-        //Get
         [HttpGet]
-        public async Task<IActionResult> Update([FromRoute] Guid id)
+        public async Task<IActionResult> Update(
+            [FromRoute] 
+            Guid id)
         {
             var model = await _gameService.GetGameAsync(id);
+
             var game = new UpdateGameViewModel()
             {
                 GenreId = id,
@@ -47,7 +54,8 @@ namespace Web.FunnyBunnyGames.Controllers
                 Price = model.Price,
                 AgeRestriction = model.AgeRestriction,
                 ImageUrl = model.ImageUrl,
-                Genres = await _genreService.ListGenresAsync()
+                Genres = await _genreService.ListGenresAsync(),
+                Companies = await _companyService.ListCompaniyAsync(),
             };
 
             return View(game);
@@ -58,7 +66,7 @@ namespace Web.FunnyBunnyGames.Controllers
         {
             await _gameService.UpdateGameAsync(id, request);
 
-            return RedirectToAction("Get", new { id });
+            return RedirectToAction("All", "Game");
         }
 
         [HttpGet]
@@ -67,7 +75,7 @@ namespace Web.FunnyBunnyGames.Controllers
             var game = new CreateGameViewModel()
             {
                 Genres = await _genreService.ListGenresAsync(),
-                //TODO: Companies 
+                Companies = await _companyService.ListCompaniyAsync(),
             };
 
             return View(game);

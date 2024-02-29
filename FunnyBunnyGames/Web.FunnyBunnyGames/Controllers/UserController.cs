@@ -1,10 +1,12 @@
 ﻿using FunnyBunnyGames.Services.Infrastructure;
 using FunnyBunnyGames.Services.Users;
 using FunnyBunnyGames.Services.Users.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.FunnyBunnyGames.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         private readonly IUsersService _usersService;

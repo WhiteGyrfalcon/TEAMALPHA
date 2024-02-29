@@ -19,22 +19,29 @@ else
                     <div class="card mb-3">
                         <div class="card-body text-center">
                             <h4>@game.Name</h4>
-                            <h6>Price: <b>@game.Price</b></h6>
+                            <img style="margin-bottom:0.5em" class="card-img-top" style="width: 18rem;"
+                                 src="@game.ImageUrl" alt="Game image">
+                            <br />
+                            <h6>Price: <b>@game.Price lv.</b></h6>
                             <h6>
-                                <b>@game.GenreName</b>
+                                Genre:
+                                <b>@game.Genre.Name</b>
+                            </h6>
+                            <h6>
+                                Company name:
+                                <b>@game.Company!.Name</b>
                             </h6>
                             <h6>
                                 Age restriction:
-                                <b>@game.AgeRestriction</b>
+                                <b>@game.AgeRestriction y.o.</b>
                             </h6>
                             <h6>
                                 Release date:
-                                <b>@game.ReleaseDate</b>
+                                <b>@game!.ReleaseDate!.Value.Day.@game.ReleaseDate.Value.Month.@game.ReleaseDate.Value.Year</b>
                             </h6>
                             <br />
-
-                            <a asp-controller="Game" asp-action="Get" asp-route-id="@game.Id"
-                               class="btn btn-success" style="background-color:#fc6c85; border-color:#fc6c85">Details</a>
+                            <a style="background-color:#fc6c85; border:none" asp-controller="Game" asp-action="Update" asp-route-id="@game.Id" class="btn btn-success">Update</a>
+                            <a asp-controller="Game" asp-action="Delete" asp-route-id="@game.Id" class="btn btn-danger">Delete</a>
                         </div>
                     </div>
                 </div>

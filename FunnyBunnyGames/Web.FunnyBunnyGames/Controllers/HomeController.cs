@@ -15,6 +15,11 @@ namespace Web.FunnyBunnyGames.Controllers
 
         public IActionResult Index()
         {
+            if (User?.Identity?.IsAuthenticated == true)
+            {
+                return RedirectToAction("All", "Game");
+            }
+
             return View();
         }
 

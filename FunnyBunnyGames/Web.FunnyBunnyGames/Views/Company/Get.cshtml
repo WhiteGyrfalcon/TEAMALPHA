@@ -1,54 +1,35 @@
 ﻿@using FunnyBunnyGames.Services.Companies.ViewModels;
 @model DetailsCompaniesViewModel
-@{
-}
-
-<h1 style="color:#fc6c85">Details:</h1>
 
 <form method="post" action="Get" class="mt-5">
 
-
-    <div class="mb-3" style="color:#fc6c85">
-        <label for="" class="form-label">Name:</label>
-        <br />
-        <input type="text" class="form-control" asp-for="Name" readonly />
-        <br />
-    </div>
-
-    <div class="mb-3" style="color:#fc6c85">
-        <label for="" class="form-label">Games:</label>
-        <br />
-        <input type="number" class="form-control" asp-for="Games" readonly />
-        <br />
-    </div>
+    <h1 style="color:#fc6c85">Details:</h1>
+    <h3 style="color:#fc6c85">@Model.Name</h3>
+    <br />
 
     <h1 style="color:#fc6c85">Games:</h1>
 
-
-<table class="table">
-    <thead>
-        <tr style="color:#fc6c85">
-            <th > Name</th>
-            <th> Price</th>
-            <th> From Age</th>
-        </tr>
-    </thead>
-    <tbody>
+    <table class="table">
+        <thead>
+            <tr style="color:#fc6c85">
+                <th> Name</th>
+                <th> Price</th>
+                <th> From Age</th>
+            </tr>
+        </thead>
+        <tbody>
             @foreach (var game in this.Model.Games)
             {
-                                    <tr style="color:#fc6c85">
-                                        <td >@game.Name</td>
-                                        <td>@game.Price</td>
-                                        <td>@game.AgeRestriction</td>
-                                    <td>
-                                        <div class="btn-group-sm">
-                                        </div>
-                                    </td>
-                                </tr>
+                <tr style="color:#fc6c85">
+                    <td>@game.Name</td>
+                    <td>@game.Price</td>
+                    <td>@game.AgeRestriction</td>
+                    <td>
+                        <div class="btn-group-sm">
+                        </div>
+                    </td>
+                </tr>
             }
-
-
-    <div class="btn-group-sm">
-        <a style="background-color:#fc6c85; border:none" asp-controller="Company" asp-action="All" asp-route-id="@Model.Id" class="btn btn-success">Back</a>
-    </div>
+            </
+    </table>
 </form>

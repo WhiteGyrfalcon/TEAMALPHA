@@ -1,10 +1,12 @@
 ﻿using FunnyBunnyGames.Services.Comments;
 using FunnyBunnyGames.Services.Comments.ViewModels;
 using FunnyBunnyGames.Services.Infrastructure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.FunnyBunnyGames.Controllers
 {
+    [Authorize]
     public class CommentController : Controller
     {
         private readonly ICommentService _commentService;

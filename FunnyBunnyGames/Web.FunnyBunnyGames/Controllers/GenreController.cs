@@ -1,10 +1,12 @@
 ﻿using FunnyBunnyGames.Services.Companies.ViewModels;
 using FunnyBunnyGames.Services.Genres;
 using FunnyBunnyGames.Services.Genres.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.FunnyBunnyGames.Controllers
 {
+    [Authorize]
     public class GenreController : Controller
     {
         private readonly IGenreService _genreService;
