@@ -1,4 +1,5 @@
 ﻿using FunnyBunnyGames.Data.Models;
+using FunnyBunnyGames.Services.Companies;
 using FunnyBunnyGames.Services.Games.ViewModel;
 using FunnyBunnyGames.Services.Genres;
 using FunnyBunnyGames.Services.Ratings;
@@ -12,11 +13,14 @@ namespace FunnyBunnyGames.Services.Games
         private readonly ApplicationDbContext context;
         private readonly IGenreService genreService;
         private readonly IRatingService ratingService;
-        public GameService(ApplicationDbContext dbContext, IGenreService genreService, IRatingService ratingService)
+        private readonly ICompanyService companyService;
+
+        public GameService(ApplicationDbContext dbContext, IGenreService genreService, IRatingService ratingService, ICompanyService companyService)
         {
             this.context = dbContext;
             this.genreService = genreService;
             this.ratingService = ratingService;
+            this.companyService = companyService;
         }
 
         public async Task CreateGameAsync(CreateGameViewModel request)
@@ -31,6 +35,7 @@ namespace FunnyBunnyGames.Services.Games
 
             Game game = new Game()
             {
+                Id = Guid.NewGuid(),
                 GenreId = request.GenreId,
                 CompanyId = request.CompanyId,
                 Name = request.Name,
@@ -39,15 +44,10 @@ namespace FunnyBunnyGames.Services.Games
                 Price = request.Price,
                 AgeRestriction = request.AgeRestriction,
                 ImageUrl = request.ImageUrl,
-                Genre = entityGenre,
-
-                //TODO: Company
-
             };
 
             await context.AddAsync(game);
             await context.SaveChangesAsync();
-
         }
 
         public async Task DeleteGameAsync(Guid id)
@@ -104,8 +104,8 @@ namespace FunnyBunnyGames.Services.Games
                     Price = game.Price,
                     AgeRestriction = game.AgeRestriction,
                     ImageUrl = game.ImageUrl,
-                    Genre = await genreService.GetGenreAsync(game.GenreId)
-                    //TODO: Company
+                    Genre = await genreService.GetGenreAsync(game.GenreId),
+                    Company = await companyService.GetCompanyAsync(game.CompanyId)
                 });
             }
 
@@ -115,7 +115,6 @@ namespace FunnyBunnyGames.Services.Games
         public async Task UpdateGameAsync(Guid id, UpdateGameViewModel request)
         {
             var model = await this.context.Games.FirstOrDefaultAsync(x => x.Id == id);
-
 
             if (model != null)
             {
@@ -131,7 +130,5 @@ namespace FunnyBunnyGames.Services.Games
 
             await context.SaveChangesAsync();
         }
-
-
     }
 }

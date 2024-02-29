@@ -12,7 +12,7 @@ namespace FunnyBunnyGames.Services.Games.ViewModel
         public DateTime? ReleaseDate { get; set; }
         public double Price { get; set; }
         public int AgeRestriction { get; set; }
-        public string ImageUrl { get; set; } = null!;
+        public string? ImageUrl { get; set; } 
 
         public double AverageRating { get; set; }
 

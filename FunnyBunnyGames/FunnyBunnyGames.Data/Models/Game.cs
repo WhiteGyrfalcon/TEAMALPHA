@@ -31,8 +31,7 @@ namespace FunnyBunnyGames.Data.Models
         [Required]
         public int AgeRestriction { get; set; }
 
-        [Required]
-        public string ImageUrl { get; set; } = null!;
+        public string? ImageUrl { get; set; }
 
         [ForeignKey(nameof(GenreId))]
         public Genre? Genre { get; set; }

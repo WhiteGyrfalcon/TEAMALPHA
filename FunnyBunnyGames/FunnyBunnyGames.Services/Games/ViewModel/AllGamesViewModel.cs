@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FunnyBunnyGames.Services.Genres.ViewModel;
+using FunnyBunnyGames.Services.Companies.ViewModels;
 
 namespace FunnyBunnyGames.Services.Games.ViewModel
 {
@@ -20,7 +21,8 @@ namespace FunnyBunnyGames.Services.Games.ViewModel
         public double Price { get; set; }
         public int AgeRestriction { get; set; }
         public string ImageUrl { get; set; } = null!;
-        public GenresViewModel Genre { get; set; }
-        public string GenreName { get; set; }
+        public GenresViewModel? Genre { get; set; }
+        public string? GenreName { get; set; }
+        public DetailsCompaniesViewModel? Company { get; set; }
     }
 }
